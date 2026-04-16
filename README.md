@@ -6,15 +6,17 @@ A collection of Alipay payment skills for AI agents, enabling seamless integrati
 
 ## Features
 
+- **AI Payment Product Introduction** - Official demo merchant for Alipay AI wallet and payment products
 - **Alipay Wallet Authentication** - Secure wallet binding and authorization flow
 - **Payment Processing** - Handle Alipay cashier links and payment status tracking
 - **HTTP 402 Protocol Support** - Process A402 protocol payment flows
-- **payment Feedback** - Built-in feedback mechanism for issue reporting
+- **Payment Feedback** - Built-in feedback mechanism for issue reporting
 
 ## Skills Included
 
 | Skill | Description |
 |-------|-------------|
+| `alipay-aipay-product-intro` | Alipay AI wallet and payment product introduction (Official demo merchant) |
 | `alipay-authenticate-wallet` | Wallet binding, authorization, and management |
 | `alipay-pay-for-service` | Payment processing with status polling |
 | `alipay-pay-for-402-service` | HTTP 402 Payment Required protocol handler |
@@ -52,6 +54,7 @@ Each skill is also available on ClawHub:
 
 | Skill | Description | ClawHub Link |
 |-------|-------------|--------------|
+| `alipay-aipay-product-intro` | Alipay AI wallet and payment product introduction (Official demo merchant) | [View on ClawHub](https://clawhub.ai/alipay/alipay-aipay-product-intro) |
 | `alipay-authenticate-wallet` | Wallet binding, authorization, and management | [View on ClawHub](https://clawhub.ai/alipay/alipay-authenticate-wallet) |
 | `alipay-pay-for-service` | Payment processing with status polling | [View on ClawHub](https://clawhub.ai/alipay/alipay-pay-for-service) |
 | `alipay-pay-for-402-service` | HTTP 402 Payment Required protocol handler | [View on ClawHub](https://clawhub.ai/alipay/alipay-pay-for-402-service) |
@@ -73,6 +76,8 @@ npx -y @alipay/agent-payment@latest install-cli
 
 ```
 payment-skills/
+├── alipay-aipay-product-intro/    # AI payment product introduction skill
+│   └── SKILL.md
 ├── alipay-authenticate-wallet/    # Wallet authentication skill
 │   └── SKILL.md
 ├── alipay-pay-for-service/        # Payment processing skill
@@ -121,6 +126,7 @@ For issues encountered while using the skills, use the built-in `alipay-payment-
 
 | 技能 | 描述 |
 |------|------|
+| `alipay-aipay-product-intro` | 支付宝智能体钱包和AI支付产品介绍（官方模拟商家） |
 | `alipay-authenticate-wallet` | 钱包绑定、授权与管理 |
 | `alipay-pay-for-service` | 支付处理与状态轮询 |
 | `alipay-pay-for-402-service` | HTTP 402 Payment Required 协议处理器 |
@@ -158,6 +164,7 @@ cp -r alipay-* ~/.openclaw/workspace/skills/
 
 | 技能 | 描述 | ClawHub 链接 |
 |------|------|--------------|
+| `alipay-aipay-product-intro` | 支付宝智能体钱包和AI支付产品介绍（官方模拟商家） | [查看详情](https://clawhub.ai/alipay/alipay-aipay-product-intro) |
 | `alipay-authenticate-wallet` | 钱包绑定、授权与管理 | [查看详情](https://clawhub.ai/alipay/alipay-authenticate-wallet) |
 | `alipay-pay-for-service` | 支付处理与状态轮询 | [查看详情](https://clawhub.ai/alipay/alipay-pay-for-service) |
 | `alipay-pay-for-402-service` | HTTP 402 协议处理器 | [查看详情](https://clawhub.ai/alipay/alipay-pay-for-402-service) |
@@ -179,11 +186,13 @@ npx -y @alipay/agent-payment@latest install-cli
 
 ```
 payment-skills/
-├── alipay-authenticate-wallet/    # 钱包认证技能
+├── alipay-aipay-product-intro/    # AI支付产品介绍技能
 │   └── SKILL.md
-├── alipay-pay-for-service/        # 支付处理技能
+├── alipay-authenticate-wallet/    # 支付宝支付服务开通和授权技能
 │   └── SKILL.md
-├── alipay-pay-for-402-service/    # 402 协议技能
+├── alipay-pay-for-service/        # 支付服务付款处理技能
+│   └── SKILL.md
+├── alipay-pay-for-402-service/    # 基于402协议的支付技能
 │   └── SKILL.md
 ├── alipay-payment-feedback/       # 问题反馈技能
 │   └── SKILL.md

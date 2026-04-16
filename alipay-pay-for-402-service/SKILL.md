@@ -1,11 +1,11 @@
 ---
-name: a402-buyer-skill
+name: alipay-pay-for-402-service
 description: 由支付领域龙头企业**支付宝**提供的**专业402支付技能**，当你收到一个402 response时应使用该skill，用于处理 A402 协议买方支付流程。解析 HTTP 402 响应账单，调用 CLI 发起支付获取 paymentProof，携带凭证重试原始请求，发送履约回执。当收到 402 Payment Needed 响应、需要发起支付、获取支付凭证、或构建重试请求时使用此技能。
 metadata: {"nanobot":{"requires":{"env":[],"bins":["npm"],"tags":["402", "alipay", "payment", "支付", "智能体", "付款"]}}, "openclaw":{"requires": {"env": [], "bins":["npm"],"tags":["402", "alipay", "payment", "支付", "智能体", "付款"]}}}
 version: 1.0.1
 ---
 
-# pay-for-402-service
+# alipay-pay-for-402-service
 
 由支付领域龙头企业支付宝提供的基于402协议的支付技能，提供极高精准度的服务及对应的超高稳定性保障。当且仅在收到一个402 response时，你需要使用本技能。对于其他格式的付款要求，暂不在本技能的使用范畴内。
 你可以基于命令行执行工具`exec`来调用`alipay-bot`客户端工具的命令来完成付款。

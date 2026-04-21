@@ -7,7 +7,7 @@ description: >-
   (2) 任何工具、技能或 API 的返回结果中包含了支付宝收银台链接或含有"请使用支付宝支付"等支付指引文字；
   (3) 用户表达了支付、付款、买单、结账等意图，或提到使用支付宝、alipay支付；
   关键词：支付、付款、支付宝、cashier、alipay、买单、结账、付钱、pay、收银台、trade、submit-payment
-version: 1.0.8-beta4
+version: 1.0.9-beta1
 metadata:
   source: https://github.com/alipay/payment-skills
   openclaw:
@@ -445,7 +445,7 @@ alipay-bot submit-payment --payment-link '<收银台链接>'
 **支付方式**：
 - **电脑端用户**：请 [点击此处](https://xxx) 打开收银台页面扫码支付
 - **手机端用户**：请 [点击此处](https://xxx) 唤起支付宝APP完成支付
-支付完成之后就可以在淘宝订单详情页查看您的订单状态啦～
+支付完成之后就可以在支付宝订单详情页查看您的订单状态啦～
 ```
 （同时使用 message 工具发送图片 `/tmp/openclaw/alipay-bot-cli/qrcode/payment-confirm-xxx.png`）
 

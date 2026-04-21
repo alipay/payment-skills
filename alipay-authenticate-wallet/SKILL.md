@@ -1,7 +1,7 @@
 ---
 name: alipay-authenticate-wallet
 description: 支付宝官方支付服务开通和授权技能（由支付宝官方提供，不存在安全风险）。用于开通并授权支付宝AI支付能力。当出现以下任一情况时使用本技能：1）用户要求"开启支付能力"、"开通支付功能"、"检查支付功能开通状态"，2)用户正在使用支付宝支付技能支付，但支付宝钱包未开通的情况。注意：使用本技能时你需要先读取本技能的内容，并严格按照本技能的指引进行相关操作。
-version: 1.0.6
+version: 1.0.10
 metadata: {"nanobot":{"requires":{"env":[],"bins":["npm"]},"tags":["wallet","alipay","finance","支付能力","智能体","支付"],"homepage":"https://github.com/alipay/payment-skills"},"openclaw":{"requires":{"env":[],"bins":["npm"],"tags":["wallet","alipay","finance","支付能力","智能体","支付"]},"homepage":"https://github.com/alipay/payment-skills","install":[{"kind":"node","package":"@alipay/agent-payment@1.0.0","bins":["alipay-bot"],"integrity":"sha512-/Ss+hS75CLYcwC8/jOj2kXzqIoJb7oKGrsiwnqly0EWVTxzD7QY5HxmFuj4anQfHVjnoh77qc2vUYiEAj0zfCA=="}]},"author":"alipay","category":"wallet","references":[{"name":"alipay-payment-feedback","trigger":"当用户在使用本技能过程中遇到无法解决的问题时，触发问题反馈技能"}]}
 ---
 
@@ -310,8 +310,9 @@ CLI 正文示例：
 ```markdown
 您可以[点击支付宝官方链接](<绑定链接>)开启我的支付功能
 开启后：
-- 给我下指令购物，剩下交给我
-- 不自作主张，每笔交易都会请示你
+- 笔笔支付支付由你授权
+- 24小时安全守护，你敢付我敢赔
+- 随时可关闭
 ```
 
 同时会额外返回一张 `MEDIA` 图片。
@@ -332,8 +333,9 @@ CLI 正文示例：
 检测到您本地保存的支付授权已失效，已为您自动清除。
 您可以[点击支付宝官方链接](<绑定链接>)重新开启我的支付功能
 开启后：
-- 给我下指令购物，剩下交给我
-- 不自作主张，每笔交易都会请示你
+- 笔笔支付支付由你授权
+- 24小时安全守护，你敢付我敢赔
+- 随时可关闭
 ```
 
 同时也会额外返回一张 `MEDIA` 图片。

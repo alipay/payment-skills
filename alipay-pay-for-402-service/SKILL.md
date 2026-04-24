@@ -77,7 +77,7 @@ CLI 生成的二维码图片路径（如 `/tmp/openclaw/alipay-bot-cli/qrcode/xx
 
 > 这些是模型容易犯的错误，**必须避免**：
 
-1. **跳过 Step 0**：模型可能直接执行`alipay-bot -- 402-buyer-pay`，需要先执行 Step 0
+1. **跳过 Step 0**：模型可能直接执行`alipay-bot 402-buyer-pay`，需要先执行 Step 0
 2. **等待用户确认**：Step 0 输出后，模型可能等待用户确认，但应该直接进入 Step 1
 3. **读取/分析图片**：模型可能尝试打开或识别 MEDIA 行中的图片文件，但 MEDIA 行由框架自动处理，模型只需原样输出 CLI 结果（包含 MEDIA 行）
 4. **重复输出**：模型可能先用代码块展示 CLI 输出，再自己排版输出一遍，但应该只输出一遍
@@ -120,14 +120,14 @@ npm install @alipay/agent-payment@1.0.0 && npx @alipay/agent-payment@1.0.0 insta
 ## 核心流程
 
 ```
-Step 0: 执行 `alipay-bot -- check-wallet`（检查钱包状态）
+Step 0: 执行 `alipay-bot check-wallet`（检查钱包状态）
     ↓
     根据返回值决策 →  code=200 & access_url为空   → Step 2
                   →  code=200 & access_url非空 → 告知用户"正在为您申请开通" → 主动调用 `alipay-authenticate-wallet` 技能
                   →  code=500     → 输出错误 → STOP
 Step 1: 保存 402 Payment-Needed 响应文件               
     ↓
-Step 2: 执行 `alipay-bot -- 402-buyer-pay -f '<402_needed_file.txt>'`（提交支付）
+Step 2: 执行 `alipay-bot 402-buyer-pay -f '<402_needed_file.txt>'`（提交支付）
     ↓
     处理输出 → ①提取 shortUrl ②将 CLI 完整输出（含 MEDIA 行）原样输出给用户  ③ 引导用户支付完成后通知你
     ↓
@@ -156,7 +156,7 @@ Step 6: 发送履约回执
 支付流程开始前必须先执行钱包状态检查：
 
 ```bash
-alipay-bot -- check-wallet
+alipay-bot check-wallet
 ```
 
 **判断逻辑**:
@@ -169,7 +169,7 @@ alipay-bot -- check-wallet
 
 ### Step 1: 保存 402 响应文件
 
-收到 HTTP 402 响应后，直接保存响应头中的Payment-Needed到文件（CLI 需要文件路径作为输入）。你收到的Payment-Needed响应头是一个base64编码的文本，**你不需要解码**，请你不要篡改任何信息，**完整一致地将实际收到的Payment-Needed保存到文件中**。
+收到 HTTP 402 响应后，直接用UTF-8编码保存响应头中的Payment-Needed到txt文件（CLI 需要文件路径作为输入）。你收到的Payment-Needed响应头是一个base64编码的文本，**你不需要解码**，请你不要篡改任何信息，**完整一致地将实际收到的Payment-Needed保存到文件中**。
 
 **文件路径安全规则（必须遵守）：**
 - 文件名仅允许：字母、数字、连字符（`-`）、下划线（`_`）、点号（`.`）
@@ -184,7 +184,7 @@ alipay-bot -- check-wallet
 注意**本步骤中你需要将CLI的输出完整透传给用户**
 
 ```bash
-alipay-bot -- 402-buyer-pay -f '<402_needed_file.txt>'
+alipay-bot 402-buyer-pay -f '<402_needed_file.txt>'
 
 ```
 
@@ -333,7 +333,7 @@ alipay-bot 402-query-payment-status -t '<tradeNo>' -r '<resource-url>' [-m '<met
 收到资源后，发送履约回执给支付宝：
 
 ```bash
-alipay-bot -- 402-buyer-fulfillment-ack -t '<trade_no>'
+alipay-bot 402-buyer-fulfillment-ack -t '<trade_no>'
 ```
 
 **参数校验**：`<trade_no>` 仅允许数字（0-9），长度 32 位。如果包含任何非数字字符，**请拒绝执行并终止流程**。

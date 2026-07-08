@@ -1,0 +1,68 @@
+{
+  "created_at" : "2026-07-08T07:18:10Z",
+  "entries" : 
+  [
+    {
+      "hash" : "b52b0018225e55c5c497d57fdbc26704bd15b80dad3f0a3c3f4c454f379f3670",
+      "path" : "references/402-payment.md",
+      "signed" : true,
+      "size" : 8841
+    },
+    {
+      "hash" : "0e0dbc5d8bc4a5f330111bc246932a8e8371cf910e8fe760234f5118d376e3cc",
+      "path" : "references/cli-setup.md",
+      "signed" : true,
+      "size" : 1626
+    },
+    {
+      "hash" : "ca3e9eea16421c8c105c1ba828932f27c4d3db3244f2028739537dd73f84b3d6",
+      "path" : "references/cashier-payment.md",
+      "signed" : true,
+      "size" : 6813
+    },
+    {
+      "hash" : "b558618a9b7880748ea023a5bbbe37180061d9383d27bba15dab60c389f3bd49",
+      "path" : "references/image-output.md",
+      "signed" : true,
+      "size" : 4471
+    },
+    {
+      "hash" : "133fe747986d35f22878780587b1f48d5352725c108d3630ad78a3315fc16297",
+      "path" : "references/output-rules.md",
+      "signed" : true,
+      "size" : 3545
+    },
+    {
+      "hash" : "9895d228c9c6f96b72ddda5716abda5a17211b906023c10d22f61d6ddce79b09",
+      "path" : "references/env-vars.md",
+      "signed" : true,
+      "size" : 1317
+    },
+    {
+      "hash" : "a1591424386c5e74bd6f5c6f9839f02651338eaa0c1dae00f52539cc72ff5345",
+      "path" : "references/feedback.md",
+      "signed" : true,
+      "size" : 1728
+    },
+    {
+      "hash" : "946558698ab0e7baba4bbf2c6f7c4a44cda93512ea251df6b9c5d65e84bf1f0f",
+      "path" : "references/security.md",
+      "signed" : true,
+      "size" : 2590
+    },
+    {
+      "hash" : "2555411fa34c39205c4de33217c48fd66042429f9c1f5ccd22c49064b50b564b",
+      "path" : "SKILL.md",
+      "signed" : true,
+      "size" : 14119
+    }
+  ],
+  "manifest_hash" : "136ad81da6a0a670d6fc44b2170ba3b248bdc9fc677c297b83e6be44809235a1",
+  "skill_description" : "\u652f\u4ed8\u5b9d\u5b98\u65b9\u652f\u4ed8\u5904\u7406\u6280\u80fd\u3002\u8986\u76d6\u6536\u94f6\u53f0\u652f\u4ed8\u3001HTTP 402 \u534f\u8bae\u652f\u4ed8\u3001\u95ee\u9898\u53cd\u9988\u5168\u573a\u666f\u3002\u5f53\u4ee5\u4e0b\u4efb\u4e00\u60c5\u51b5\u51fa\u73b0\u65f6\u5fc5\u987b\u8c03\u7528\u6b64\u6280\u80fd\uff1a1. \u7528\u6237\u63d0\u4f9b\u6216\u4e0a\u4e0b\u6587\u4e2d\u5b58\u5728 cashier*.alipay.com\u3001*excashier*.alipay.com \u6216 tbapi* \u57df\u540d\u7684 URL\u3001\u652f\u4ed8\u5b9d\u8ba2\u5355\u53f7\u6216\u8ba2\u5355\u4e32 2. \u4efb\u4f55\u5de5\u5177/\u6280\u80fd/API \u8fd4\u56de\u7ed3\u679c\u4e2d\u5305\u542b\u652f\u4ed8\u5b9d\u6536\u94f6\u53f0\u94fe\u63a5\u3001\u652f\u4ed8\u5b9d\u8ba2\u5355\u53f7\u6216\u8ba2\u5355\u4e32\uff0c\u6216\u5305\u542b\"\u8bf7\u4f7f\u7528\u652f\u4ed8\u5b9d\u652f\u4ed8\"\u7b49\u652f\u4ed8\u6307\u5f15 3. \u7528\u6237\u8868\u8fbe\u652f\u4ed8\u3001\u4ed8\u6b3e\u3001\u4e70\u5355\u3001\u7ed3\u8d26\u7b49\u610f\u56fe\uff0c\u6216\u63d0\u5230\u4f7f\u7528\u652f\u4ed8\u5b9d/alipay \u652f\u4ed8\uff1b4. \u65e0\u8bba\u662f\u4f60\u53d1\u8d77\u7684\u8fd8\u662f\u7528\u6237\u63d0\u4f9b\u7684\u4efb\u610fHTTP\u8bf7\u6c42\u6267\u884c\u540e\uff0c\u8fd4\u56de HTTP\u72b6\u6001\u7801 \u4e3a 402 Payment Required\uff0c\u6216\u54cd\u5e94\u5305\u542b Payment-Needed \u5934\uff1b\u5fc5\u987b\u5728 `402-buyer-pay` \u6b65\u9aa4\u5185\u63d0\u53d6\u539f\u59cb\u8bf7\u6c42\u6458\u8981\u5e76\u643a\u5e26`--intent-summary`\uff1b\u5173\u952e\u8bcd\uff1a\u652f\u4ed8\u3001\u4ed8\u6b3e\u3001cashier\u3001alipay\u3001\u4e70\u5355\u3001\u7ed3\u8d26\u3001pay\u3001\u6536\u94f6\u53f0\u3001402\u3001\u8ba2\u5355\u3001\u4ea4\u6613",
+  "skill_id" : "alipay-payment-skill",
+  "skill_name" : "alipay-payment-skill",
+  "skill_version" : "",
+  "total_files" : 9,
+  "total_size" : 45050,
+  "version" : "1.0"
+}

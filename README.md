@@ -6,21 +6,17 @@ A collection of Alipay payment skills for AI agents, enabling seamless integrati
 
 ## Features
 
-- **AI Payment Product Introduction** - Official demo merchant for Alipay AI wallet and payment products
-- **Alipay Wallet Authentication** - Secure wallet binding and authorization flow
-- **Payment Processing** - Handle Alipay cashier links and payment status tracking
-- **HTTP 402 Protocol Support** - Process A402 protocol payment flows
-- **Payment Feedback** - Built-in feedback mechanism for issue reporting
+- **Unified Payment Processing** - Handle Alipay cashier links, HTTP 402 protocol payments, and issue reporting in a single skill
+- **Alipay Wallet Authentication** - Secure wallet activation, authorization, binding, and unbinding flows
+- **Supply-Chain Verified** - Each skill includes `.signature/` verification assets for integrity checking
+- **Modular Documentation** - Each skill bundles `references/` for on-demand documentation (CLI setup, env vars, security, output rules, etc.)
 
 ## Skills Included
 
 | Skill | Description |
 |-------|-------------|
-| `alipay-aipay-product-intro` | Alipay AI wallet and payment product introduction (Official demo merchant) |
-| `alipay-authenticate-wallet` | Wallet binding, authorization, and management |
-| `alipay-pay-for-service` | Payment processing with status polling |
-| `alipay-pay-for-402-service` | HTTP 402 Payment Required protocol handler |
-| `alipay-payment-feedback` | Issue reporting and feedback |
+| `alipay-payment-skill` | Unified payment processing: cashier payment, HTTP 402 Payment Required protocol, and feedback |
+| `alipay-authenticate-wallet` | Wallet activation, authorization, binding, and unbinding |
 
 ## Prerequisites
 
@@ -42,7 +38,7 @@ Copy individual skill folders to your OpenClaw workspace:
 
 ```bash
 # Install a specific skill
-cp -r alipay-authenticate-wallet ~/.openclaw/workspace/skills/
+cp -r alipay-payment-skill ~/.openclaw/workspace/skills/
 
 # Or install all skills
 cp -r alipay-* ~/.openclaw/workspace/skills/
@@ -54,19 +50,12 @@ Each skill is also available on ClawHub:
 
 | Skill | Description | ClawHub Link |
 |-------|-------------|--------------|
-| `alipay-aipay-product-intro` | Alipay AI wallet and payment product introduction (Official demo merchant) | [View on ClawHub](https://clawhub.ai/alipay/alipay-aipay-product-intro) |
-| `alipay-authenticate-wallet` | Wallet binding, authorization, and management | [View on ClawHub](https://clawhub.ai/alipay/alipay-authenticate-wallet) |
-| `alipay-pay-for-service` | Payment processing with status polling | [View on ClawHub](https://clawhub.ai/alipay/alipay-pay-for-service) |
-| `alipay-pay-for-402-service` | HTTP 402 Payment Required protocol handler | [View on ClawHub](https://clawhub.ai/alipay/alipay-pay-for-402-service) |
-| `alipay-payment-feedback` | Issue reporting and feedback | [View on ClawHub](https://clawhub.ai/alipay/alipay-payment-feedback) |
+| `alipay-payment-skill` | Unified payment processing (cashier, 402, feedback) | [View on ClawHub](https://clawhub.ai/alipay/skills/alipay-payment-skill) |
+| `alipay-authenticate-wallet` | Wallet activation, authorization, and management | [View on ClawHub](https://clawhub.ai/alipay/skills/alipay-authenticate-wallet) |
 
 ## Quick Start
 
-The CLI tool is automatically installed during the one-click installation. If you need to install it separately:
-
-```bash
-npx -y @alipay/agent-payment@latest install-cli
-```
+The CLI tool is automatically installed during the installation. 
 
 2. **Use a skill in your agent**:
    - The skill will be triggered automatically based on context
@@ -76,19 +65,31 @@ npx -y @alipay/agent-payment@latest install-cli
 
 ```
 payment-skills/
-├── alipay-aipay-product-intro/    # AI payment product introduction skill
-│   └── SKILL.md
-├── alipay-authenticate-wallet/    # Wallet authentication skill
-│   └── SKILL.md
-├── alipay-pay-for-service/        # Payment processing skill
-│   └── SKILL.md
-├── alipay-pay-for-402-service/    # 402 protocol skill
-│   └── SKILL.md
-├── alipay-payment-feedback/       # Feedback skill
-│   └── SKILL.md
-├── LICENSE                        # Apache 2.0 License
-├── LEGAL.md                       # Legal documentation
-└── README.md                      # This file
+├── alipay-payment-skill/             # Unified payment processing skill
+│   ├── SKILL.md                      # Skill definition and payment routing
+│   ├── .signature/                   # Supply-chain signature verification
+│   └── references/                   # On-demand documentation
+│       ├── cashier-payment.md        # Cashier payment flow
+│       ├── 402-payment.md            # HTTP 402 protocol payment flow
+│       ├── feedback.md               # Issue feedback flow
+│       ├── cli-setup.md              # CLI installation guide
+│       ├── env-vars.md               # Environment variable rules
+│       ├── image-output.md           # Image output handling
+│       ├── output-rules.md           # Output formatting rules
+│       └── security.md               # Security and privacy notes
+├── alipay-authenticate-wallet/       # Wallet authentication skill
+│   ├── SKILL.md                      # Skill definition for wallet operations
+│   ├── .signature/                   # Supply-chain signature verification
+│   └── references/                   # On-demand documentation
+│       ├── cli-setup.md              # CLI installation guide
+│       ├── env-vars.md               # Environment variable rules
+│       ├── feedback.md               # Issue feedback flow
+│       ├── image-output.md           # Image output handling
+│       ├── output-rules.md           # Output formatting rules
+│       └── security.md               # Security and privacy notes
+├── LICENSE                           # Apache 2.0 License
+├── LEGAL.md                          # Legal documentation
+└── README.md                         # This file
 ```
 
 ## Security
@@ -96,6 +97,7 @@ payment-skills/
 - All payment operations require explicit user authorization
 - Sensitive credentials are never exposed to end users
 - Built-in protection against common security pitfalls
+- Supply-chain integrity verified via `.signature/` assets in each skill
 
 ## License
 
@@ -107,7 +109,7 @@ Contributions are welcome! Please feel free to submit issues or pull requests.
 
 ## Support
 
-For issues encountered while using the skills, use the built-in `alipay-payment-feedback` skill to report problems to the Alipay team.
+For issues encountered while using the skills, use the built-in feedback flow within `alipay-payment-skill` to report problems to the Alipay team.
 
 ---
 
@@ -117,20 +119,17 @@ For issues encountered while using the skills, use the built-in `alipay-payment-
 
 ## 功能特性
 
-- **支付宝钱包认证** - 安全的钱包绑定与授权流程
-- **支付处理** - 处理支付宝收银台链接及支付状态追踪
-- **HTTP 402 协议支持** - 处理 A402 协议支付流程
-- **问题反馈** - 内置问题反馈机制
+- **统一支付处理** - 单一技能覆盖收银台支付、HTTP 402 协议支付、问题反馈全场景
+- **支付宝钱包认证** - 安全的钱包开通、授权、绑定与解绑流程
+- **供应链验证** - 每个技能包含 `.signature/` 签名验证资产，确保完整性
+- **模块化文档** - 每个技能内置 `references/` 参考文档（CLI 安装、环境变量、安全说明、输出规则等），按需查阅
 
 ## 包含技能
 
 | 技能 | 描述 |
 |------|------|
-| `alipay-aipay-product-intro` | 支付宝智能体钱包和AI支付产品介绍（官方模拟商家） |
-| `alipay-authenticate-wallet` | 钱包绑定、授权与管理 |
-| `alipay-pay-for-service` | 支付处理与状态轮询 |
-| `alipay-pay-for-402-service` | HTTP 402 Payment Required 协议处理器 |
-| `alipay-payment-feedback` | 问题上报与反馈 |
+| `alipay-payment-skill` | 统一支付处理：收银台支付、HTTP 402 Payment Required 协议、问题反馈 |
+| `alipay-authenticate-wallet` | 钱包开通、授权、绑定与解绑 |
 
 ## 环境要求
 
@@ -152,7 +151,7 @@ npx -y @alipay/agent-payment@latest install
 
 ```bash
 # 安装单个技能
-cp -r alipay-authenticate-wallet ~/.openclaw/workspace/skills/
+cp -r alipay-payment-skill ~/.openclaw/workspace/skills/
 
 # 或安装所有技能
 cp -r alipay-* ~/.openclaw/workspace/skills/
@@ -164,11 +163,8 @@ cp -r alipay-* ~/.openclaw/workspace/skills/
 
 | 技能 | 描述 | ClawHub 链接 |
 |------|------|--------------|
-| `alipay-aipay-product-intro` | 支付宝智能体钱包和AI支付产品介绍（官方模拟商家） | [查看详情](https://clawhub.ai/alipay/alipay-aipay-product-intro) |
-| `alipay-authenticate-wallet` | 钱包绑定、授权与管理 | [查看详情](https://clawhub.ai/alipay/alipay-authenticate-wallet) |
-| `alipay-pay-for-service` | 支付处理与状态轮询 | [查看详情](https://clawhub.ai/alipay/alipay-pay-for-service) |
-| `alipay-pay-for-402-service` | HTTP 402 协议处理器 | [查看详情](https://clawhub.ai/alipay/alipay-pay-for-402-service) |
-| `alipay-payment-feedback` | 问题上报与反馈 | [查看详情](https://clawhub.ai/alipay/alipay-payment-feedback) |
+| `alipay-payment-skill` | 统一支付处理（收银台、402 协议、反馈） | [查看详情](https://clawhub.ai/alipay/alipay-payment-skill) |
+| `alipay-authenticate-wallet` | 钱包开通、授权与管理 | [查看详情](https://clawhub.ai/alipay/alipay-authenticate-wallet) |
 
 ## 快速开始
 
@@ -186,19 +182,31 @@ npx -y @alipay/agent-payment@latest install-cli
 
 ```
 payment-skills/
-├── alipay-aipay-product-intro/    # AI支付产品介绍技能
-│   └── SKILL.md
-├── alipay-authenticate-wallet/    # 支付宝支付服务开通和授权技能
-│   └── SKILL.md
-├── alipay-pay-for-service/        # 支付服务付款处理技能
-│   └── SKILL.md
-├── alipay-pay-for-402-service/    # 基于402协议的支付技能
-│   └── SKILL.md
-├── alipay-payment-feedback/       # 问题反馈技能
-│   └── SKILL.md
-├── LICENSE                        # Apache 2.0 许可证
-├── LEGAL.md                       # 合规文档
-└── README.md                      # 说明文档
+├── alipay-payment-skill/             # 统一支付处理技能
+│   ├── SKILL.md                      # 技能定义与支付路由
+│   ├── .signature/                   # 供应链签名验证
+│   └── references/                   # 按需参考文档
+│       ├── cashier-payment.md        # 收银台支付流程
+│       ├── 402-payment.md            # HTTP 402 协议支付流程
+│       ├── feedback.md               # 问题反馈流程
+│       ├── cli-setup.md              # CLI 安装指引
+│       ├── env-vars.md               # 环境变量规则
+│       ├── image-output.md           # 图片输出处理
+│       ├── output-rules.md           # 输出格式化规则
+│       └── security.md               # 安全与隐私说明
+├── alipay-authenticate-wallet/       # 钱包认证技能
+│   ├── SKILL.md                      # 钱包操作技能定义
+│   ├── .signature/                   # 供应链签名验证
+│   └── references/                   # 按需参考文档
+│       ├── cli-setup.md              # CLI 安装指引
+│       ├── env-vars.md               # 环境变量规则
+│       ├── feedback.md               # 问题反馈流程
+│       ├── image-output.md           # 图片输出处理
+│       ├── output-rules.md           # 输出格式化规则
+│       └── security.md               # 安全与隐私说明
+├── LICENSE                           # Apache 2.0 许可证
+├── LEGAL.md                          # 合规文档
+└── README.md                         # 说明文档
 ```
 
 ## 安全保障
@@ -206,6 +214,7 @@ payment-skills/
 - 所有支付操作需用户明确授权
 - 敏感凭证不会暴露给最终用户
 - 内置常见安全陷阱防护
+- 每个技能通过 `.signature/` 资产进行供应链完整性验证
 
 ## 开源许可
 
@@ -213,4 +222,4 @@ payment-skills/
 
 ## 技术支持
 
-使用技能过程中遇到问题，可使用内置的 `alipay-payment-feedback` 技能向支付宝团队反馈，我们将尽快定位排查。
+使用技能过程中遇到问题，可使用 `alipay-payment-skill` 内置的反馈流程向支付宝团队反馈，我们将尽快定位排查。

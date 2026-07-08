@@ -1,0 +1,56 @@
+{
+  "created_at" : "2026-06-27T12:15:36Z",
+  "entries" : 
+  [
+    {
+      "hash" : "0e0dbc5d8bc4a5f330111bc246932a8e8371cf910e8fe760234f5118d376e3cc",
+      "path" : "references/cli-setup.md",
+      "signed" : true,
+      "size" : 1626
+    },
+    {
+      "hash" : "b558618a9b7880748ea023a5bbbe37180061d9383d27bba15dab60c389f3bd49",
+      "path" : "references/image-output.md",
+      "signed" : true,
+      "size" : 4471
+    },
+    {
+      "hash" : "027ef345365da3d6087cf79456bc75e124953aa598def4911c0cb8ba87eb4c16",
+      "path" : "references/output-rules.md",
+      "signed" : true,
+      "size" : 3746
+    },
+    {
+      "hash" : "9895d228c9c6f96b72ddda5716abda5a17211b906023c10d22f61d6ddce79b09",
+      "path" : "references/env-vars.md",
+      "signed" : true,
+      "size" : 1317
+    },
+    {
+      "hash" : "a1591424386c5e74bd6f5c6f9839f02651338eaa0c1dae00f52539cc72ff5345",
+      "path" : "references/feedback.md",
+      "signed" : true,
+      "size" : 1728
+    },
+    {
+      "hash" : "c1119c18de5a50863978df84085351316393fa2eff5c6ca628cf3590982ecc00",
+      "path" : "references/security.md",
+      "signed" : true,
+      "size" : 2498
+    },
+    {
+      "hash" : "dbb6d967dc8fe2dc27d629ee22f1dcf1954bb0edf4cb23f9ecb67779c4421351",
+      "path" : "SKILL.md",
+      "signed" : true,
+      "size" : 39110
+    }
+  ],
+  "manifest_hash" : "5b884631e071e2ed1e40a1d0ed09dccb69e89e51ceac1b0a0f6c284dc3b0a9c9",
+  "skill_description" : "|",
+  "skill_id" : "alipay-authenticate-wallet",
+  "skill_name" : "alipay-authenticate-wallet",
+  "skill_version" : "",
+  "total_files" : 7,
+  "total_size" : 54496,
+  "version" : "1.0"
+}

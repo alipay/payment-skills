@@ -1,30 +1,12 @@
 {
-  "created_at" : "2026-06-27T12:15:36Z",
+  "created_at" : "2026-11-10T06:44:31Z",
   "entries" : 
   [
     {
-      "hash" : "0e0dbc5d8bc4a5f330111bc246932a8e8371cf910e8fe760234f5118d376e3cc",
-      "path" : "references/cli-setup.md",
+      "hash" : "55008b2ec95d8a3f50b87d3c758000eb385fbc8e748be3bc7bbdaacec64bc5ba",
+      "path" : "references/command-recovery.md",
       "signed" : true,
-      "size" : 1626
-    },
-    {
-      "hash" : "b558618a9b7880748ea023a5bbbe37180061d9383d27bba15dab60c389f3bd49",
-      "path" : "references/image-output.md",
-      "signed" : true,
-      "size" : 4471
-    },
-    {
-      "hash" : "027ef345365da3d6087cf79456bc75e124953aa598def4911c0cb8ba87eb4c16",
-      "path" : "references/output-rules.md",
-      "signed" : true,
-      "size" : 3746
-    },
-    {
-      "hash" : "9895d228c9c6f96b72ddda5716abda5a17211b906023c10d22f61d6ddce79b09",
-      "path" : "references/env-vars.md",
-      "signed" : true,
-      "size" : 1317
+      "size" : 905
     },
     {
       "hash" : "a1591424386c5e74bd6f5c6f9839f02651338eaa0c1dae00f52539cc72ff5345",
@@ -33,24 +15,24 @@
       "size" : 1728
     },
     {
-      "hash" : "c1119c18de5a50863978df84085351316393fa2eff5c6ca628cf3590982ecc00",
+      "hash" : "b55bde44f61741a59d31cc33109381d0b45853c91e1b5763d9c7cdab190e4905",
       "path" : "references/security.md",
       "signed" : true,
       "size" : 2498
     },
     {
-      "hash" : "dbb6d967dc8fe2dc27d629ee22f1dcf1954bb0edf4cb23f9ecb67779c4421351",
+      "hash" : "fa391d97aab6a518400ddf03e79d86ac16f3b9bfb630a8fd58f1c873b3f537ed",
       "path" : "SKILL.md",
       "signed" : true,
-      "size" : 39110
+      "size" : 7688
     }
   ],
-  "manifest_hash" : "5b884631e071e2ed1e40a1d0ed09dccb69e89e51ceac1b0a0f6c284dc3b0a9c9",
-  "skill_description" : "|",
+  "manifest_hash" : "077abe628b5400ff79ab460a7440489cb1d536e5d4fa9217fb3a17a38fd3e271",
+  "skill_description" : "\u652f\u4ed8\u5b9d\u5b98\u65b9 AI \u652f\u4ed8\u80fd\u529b\u5f00\u901a\u4e0e\u6388\u6743\u6280\u80fd\u3002\u7528\u4e8e\u72ec\u7acb\u94b1\u5305\u7533\u8bf7\u5f00\u901a\u3001\u67e5\u8be2\u6388\u6743\u72b6\u6001\u3001\u63d0\u4ea4\u5f00\u901a\u53e3\u4ee4\u3001\u63d0\u4ea4\u6388\u6743\u7801\u3001\u786e\u8ba4\u652f\u4ed8\u5b9d\u4fa7\u64cd\u4f5c\u7ed3\u679c\u3001\u5173\u95ed\u6388\u6743\uff0c\u4ee5\u53ca\u652f\u4ed8\u547d\u4ee4\u660e\u786e\u8f6c\u4ea4\u7684\u94b1\u5305\u5904\u7406\uff1b\u201c\u7528\u6237\u8d26\u53f7 token\u201d\u201c\u8d26\u53f7 token\u201d\u201c\u53e3\u4ee4\u7801\u201d\u201c\u5f00\u901a\u7801\u201d\u201cenrollment code\u201d\u4e5f\u89e6\u53d1\u3002\u6536\u94f6\u53f0\u3001\u8ba2\u5355\u6216\u534f\u8bae\u652f\u4ed8\u4ecd\u7531\u652f\u4ed8\u6280\u80fd\u5904\u7406\u3002\u5173\u952e\u8bcd\uff1a\u5f00\u901a\u3001\u6388\u6743\u3001\u7ed1\u5b9a\u3001\u89e3\u7ed1\u3001\u652f\u4ed8\u80fd\u529b\u3001\u652f\u4ed8\u529f\u80fd\u3001\u7528\u6237\u8d26\u53f7token\u3001\u53e3\u4ee4\u7801\u3001\u5f00\u901a\u7801\u3001enrollment code\u3001\u9a8c\u8bc1\u7801\u3001\u6388\u6743\u7801\u3001\u94b1\u5305\u3001AI\u94b1\u5305",
   "skill_id" : "alipay-authenticate-wallet",
   "skill_name" : "alipay-authenticate-wallet",
-  "skill_version" : "",
-  "total_files" : 7,
-  "total_size" : 54496,
+  "skill_version" : "1.0.17",
+  "total_files" : 4,
+  "total_size" : 12819,
   "version" : "1.0"
 }

@@ -5,7 +5,7 @@
 ## CLI 工具来源与供应链安全
 
 - `@alipay/agent-payment` 是支付宝官方发布的 npm 包，`@alipay` scope 由 Ant Group 持有
-- 版本锁定为 `@1.0.12`，配合 SHA-512 完整性校验，确保安装内容与官方发布一致
+- 版本锁定为 `@1.0.31`，配合 SHA-512 完整性校验，确保安装内容与官方发布一致
 - 安装前必须通过完整性校验，校验失败则禁止安装
 - 官方 npm 页面：https://www.npmjs.com/package/@alipay/agent-payment
 

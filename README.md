@@ -9,7 +9,7 @@ A collection of Alipay payment skills for AI agents, enabling seamless integrati
 - **Unified Payment Processing** - Handle Alipay cashier links, HTTP 402 protocol payments, and issue reporting in a single skill
 - **Alipay Wallet Authentication** - Secure wallet activation, authorization, binding, and unbinding flows
 - **Supply-Chain Verified** - Each skill includes `.signature/` verification assets for integrity checking
-- **Modular Documentation** - Each skill bundles `references/` for on-demand documentation (CLI setup, env vars, security, output rules, etc.)
+- **Modular Documentation** - Each skill bundles `references/` for on-demand documentation (payment flows, feedback, security, CLI recovery, etc.)
 
 ## Skills Included
 
@@ -55,7 +55,10 @@ Each skill is also available on ClawHub:
 
 ## Quick Start
 
-The CLI tool is automatically installed during the installation. 
+1. **Install skills and CLI**:
+   ```bash
+   npx -y @alipay/agent-payment@latest install
+   ```
 
 2. **Use a skill in your agent**:
    - The skill will be triggered automatically based on context
@@ -72,20 +75,14 @@ payment-skills/
 │       ├── cashier-payment.md        # Cashier payment flow
 │       ├── 402-payment.md            # HTTP 402 protocol payment flow
 │       ├── feedback.md               # Issue feedback flow
-│       ├── cli-setup.md              # CLI installation guide
-│       ├── env-vars.md               # Environment variable rules
-│       ├── image-output.md           # Image output handling
-│       ├── output-rules.md           # Output formatting rules
+│       ├── command-recovery.md       # CLI recovery when alipay-bot is missing
 │       └── security.md               # Security and privacy notes
 ├── alipay-authenticate-wallet/       # Wallet authentication skill
 │   ├── SKILL.md                      # Skill definition for wallet operations
 │   ├── .signature/                   # Supply-chain signature verification
 │   └── references/                   # On-demand documentation
-│       ├── cli-setup.md              # CLI installation guide
-│       ├── env-vars.md               # Environment variable rules
 │       ├── feedback.md               # Issue feedback flow
-│       ├── image-output.md           # Image output handling
-│       ├── output-rules.md           # Output formatting rules
+│       ├── command-recovery.md       # CLI recovery when alipay-bot is missing
 │       └── security.md               # Security and privacy notes
 ├── LICENSE                           # Apache 2.0 License
 ├── LEGAL.md                          # Legal documentation
@@ -122,7 +119,7 @@ For issues encountered while using the skills, use the built-in feedback flow wi
 - **统一支付处理** - 单一技能覆盖收银台支付、HTTP 402 协议支付、问题反馈全场景
 - **支付宝钱包认证** - 安全的钱包开通、授权、绑定与解绑流程
 - **供应链验证** - 每个技能包含 `.signature/` 签名验证资产，确保完整性
-- **模块化文档** - 每个技能内置 `references/` 参考文档（CLI 安装、环境变量、安全说明、输出规则等），按需查阅
+- **模块化文档** - 每个技能内置 `references/` 参考文档（支付流程、反馈、安全说明、CLI 恢复等），按需查阅
 
 ## 包含技能
 
@@ -163,20 +160,19 @@ cp -r alipay-* ~/.openclaw/workspace/skills/
 
 | 技能 | 描述 | ClawHub 链接 |
 |------|------|--------------|
-| `alipay-payment-skill` | 统一支付处理（收银台、402 协议、反馈） | [查看详情](https://clawhub.ai/alipay/alipay-payment-skill) |
-| `alipay-authenticate-wallet` | 钱包开通、授权与管理 | [查看详情](https://clawhub.ai/alipay/alipay-authenticate-wallet) |
+| `alipay-payment-skill` | 统一支付处理（收银台、402 协议、反馈） | [查看详情](https://clawhub.ai/alipay/skills/alipay-payment-skill) |
+| `alipay-authenticate-wallet` | 钱包开通、授权与管理 | [查看详情](https://clawhub.ai/alipay/skills/alipay-authenticate-wallet) |
 
 ## 快速开始
 
-CLI 工具会在一键安装时自动安装。如需单独安装 CLI：
+1. **安装技能和 CLI**：
+   ```bash
+   npx -y @alipay/agent-payment@latest install
+   ```
 
-```bash
-npx -y @alipay/agent-payment@latest install-cli
-```
-
-在智能体中使用技能：
-- 技能会根据上下文自动触发
-- 按照各 SKILL.md 中的指引操作
+2. **在智能体中使用技能**：
+   - 技能会根据上下文自动触发
+   - 按照各 SKILL.md 中的指引操作
 
 ## 项目结构
 
@@ -189,20 +185,14 @@ payment-skills/
 │       ├── cashier-payment.md        # 收银台支付流程
 │       ├── 402-payment.md            # HTTP 402 协议支付流程
 │       ├── feedback.md               # 问题反馈流程
-│       ├── cli-setup.md              # CLI 安装指引
-│       ├── env-vars.md               # 环境变量规则
-│       ├── image-output.md           # 图片输出处理
-│       ├── output-rules.md           # 输出格式化规则
+│       ├── command-recovery.md       # CLI 不可用时恢复流程
 │       └── security.md               # 安全与隐私说明
 ├── alipay-authenticate-wallet/       # 钱包认证技能
 │   ├── SKILL.md                      # 钱包操作技能定义
 │   ├── .signature/                   # 供应链签名验证
 │   └── references/                   # 按需参考文档
-│       ├── cli-setup.md              # CLI 安装指引
-│       ├── env-vars.md               # 环境变量规则
 │       ├── feedback.md               # 问题反馈流程
-│       ├── image-output.md           # 图片输出处理
-│       ├── output-rules.md           # 输出格式化规则
+│       ├── command-recovery.md       # CLI 不可用时恢复流程
 │       └── security.md               # 安全与隐私说明
 ├── LICENSE                           # Apache 2.0 许可证
 ├── LEGAL.md                          # 合规文档
